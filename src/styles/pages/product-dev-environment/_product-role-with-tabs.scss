@@ -1,0 +1,168 @@
+.main-tab-wrap {
+  margin-top: 56px;
+  background-color: #dcdfe4;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .product-info {
+      width: 100%;
+      max-width: 260px;
+      position: relative;
+      left: -10px;
+      .product-dropdown-list {
+        z-index: 100;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        background-color: $color-white;
+        border-radius: 5px;
+        @extend .popup-shadow;
+        @extend .anim-05s;
+      }
+      .col-wrap {
+        display: flex;
+        align-items: center;
+        padding: 8px 10px;
+        cursor: pointer;
+        position: relative;
+        @extend .anim-05s;
+        &:hover {
+          background-color: #f6f6f6;
+        }
+        &:last-child {
+          border: 0;
+          position: relative;
+          &:before {
+            content: "";
+            width: calc(100% - 20px);
+            height: 1px;
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            background-color: $color-border-grey;
+          }
+        }
+        &.selected-col {
+          border: 0;
+          .content {
+            .designation {
+              position: relative;
+              width: auto;
+              &:after {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-image: url(../../../assets/images/all-new-svg-icons/dropdown.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 5px;
+                right: -24px;
+              }
+            }
+          }
+          &:before {
+            display: none;
+          }
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        &.col-content {
+          .content {
+            width: 100%;
+            padding-left: 0;
+            .link-text {
+              color: $color-test-failed;
+            }
+          }
+        }
+        .img-icon {
+          width: 50px;
+          height: 50px;
+          border: 1px solid $color-white;
+          border-radius: 4px;
+        }
+        .content {
+          width: calc(100% - 50px);
+          padding: 0 0 0 10px;
+          .company-name {
+            line-height: 24px;
+            color: $color-secondary-darkgrey;
+            opacity: 0.8;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .designation {
+            color: $color-secondary-darkgrey;
+            line-height: 20px;
+            opacity: 0.8;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    .tab-lists {
+      width: calc(100% - 260px);
+      display: flex;
+      justify-content: center;
+      .tab {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 200px;
+        height: 46px;
+        justify-content: center;
+        background-color: #eeeff3;
+        margin: 0 2px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        &:last-child {
+          margin-right: 0;
+        }
+        .icon-img {
+          width: 15px;
+          height: 15px;
+          .active-img {
+            display: none;
+          }
+        }
+        .menu-text {
+          color: #707070;
+          margin-left: 10px;
+        }
+        &.active,
+        &:hover {
+          .icon-img {
+            img {
+              display: none;
+            }
+            .active-img {
+              display: block;
+            }
+          }
+          .menu-text {
+            color: $color-primary-blue;
+          }
+        }
+        &.active {
+          background-color: $color-white;
+          .menu-text {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab-panel {
+  width: 100%;
+  height: calc(100vh - 125px);
+  overflow: hidden;
+  display: flex;
+  padding-top: 50px;
+}

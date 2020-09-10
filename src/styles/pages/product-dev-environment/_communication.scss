@@ -1,0 +1,894 @@
+.communication {
+  // padding-right: 30px;
+}
+.communication-left {
+  width: 100%;
+  max-width: 260px;
+  .communication-left-wrap {
+    padding: 0px 0;
+    border-right: 1px solid $color-border-grey;
+    height: 100%;
+    overflow: auto;
+    .comm-left-sign-le-section {
+      padding: 24px 30px;
+      align-items: center;
+      border-top: 1px solid $color-border-grey;
+      cursor: pointer;
+      position: relative;
+      color: $color-dark-grey;
+      text-transform: capitalize;
+
+      img {
+        margin-right: 17px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        &.blackicon {
+          display: inline-block;
+        }
+        &.blueicon {
+          display: none;
+        }
+      }
+
+      &.active {
+        color: $color-primary-blue;
+        background-color: $color-active-lightblue;
+        img.blackicon {
+          display: none;
+        }
+        img.blueicon {
+          display: inline-block;
+        }
+        &:before {
+          width: 5px;
+          height: 100%;
+          background-color: $color-primary-blue;
+          content: "";
+          position: absolute;
+          top: 0px;
+          right: 0px;
+        }
+      }
+      &:hover {
+        background-color: $color-active-lightblue;
+      }
+      &:last-child {
+        border-bottom: 1px solid $color-border-grey;
+      }
+    }
+  }
+}
+.communication-right {
+  max-width: calc(100% - 260px);
+  width: 100%;
+  /* video call */
+  .video-call-wrap {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    img {
+      &.videoimg {
+        width: 200px;
+        height: 200px;
+        margin: 20px 0;
+      }
+    }
+    .invite-box {
+      align-items: flex-start;
+      input {
+        padding: 10px;
+        background-color: $input-bg-color;
+        border: none;
+        min-width: 200px;
+        width: 100%;
+        height: 43px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      button {
+        background-color: $color-primary-orange;
+        color: $color-white;
+        width: 135px;
+        height: 43px;
+        margin-top: 0px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        border: 0;
+      }
+    }
+    .teams-coming {
+      color: $color-secondary-darkgrey;
+      margin-top: 20px;
+    }
+    &.active {
+      display: flex;
+    }
+    &.group-feature {
+      padding: 16px;
+    }
+    div {
+      text-align: center;
+
+      .invite-heading {
+        color: $color-primary-blue;
+        margin: 16px 0px;
+      }
+    }
+  }
+
+  /* your uploads */
+  .your-uploads {
+    padding: 13px 0px 0 0;
+    display: none;
+    .your-uploads-head {
+      padding: 0px 0px 20px 64px;
+      border-bottom: 1px solid $borderbottom-color;
+      justify-content: space-between;
+      .upload-new {
+        cursor: pointer;
+        display: block;
+        text-transform: capitalize;
+        color: $color-white;
+        background-color: $color-primary-orange;
+        width: 137px;
+        height: 38px;
+        padding: 10px 10px 10px 35px;
+        position: relative;
+        border-radius: 5px;
+        margin-right: 15px;
+        z-index: 1;
+        &:before {
+          content: "";
+          cursor: pointer;
+          position: absolute;
+          left: 13px;
+          background: url(../../../assets/images/all-new-svg-icons/upload.svg);
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+    .your-upload-content {
+      padding: 50px 0 0 50px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      /* margin: 0 -15px; */
+      height: calc(100vh - 240px);
+      overflow: auto;
+      display: none;
+      .upload-content {
+        // #changes for postion bottom padding from 40px to 10px
+        padding: 10px 14px 10px 14px;
+        margin: 15px 15px;
+        position: relative;
+        max-width: 230px;
+        max-height: 230px;
+        img {
+          width: 100%;
+        }
+        .file-sprint {
+          position: absolute;
+          top: 10px;
+          left: 15px;
+          background-color: $color-status-backend;
+          color: #fff;
+          height: auto;
+          width: auto;
+          border-radius: 2px;
+          padding: 2px 5px;
+        }
+        span {
+          // #changes Remove position for overlapping image with text
+          // position: absolute;
+          bottom: 9px;
+          left: 15px;
+          text-transform: capitalize;
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+      &.active {
+        display: flex;
+      }
+    }
+    .your-upload-empty {
+      height: calc(100vh - 240px);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        width: 226px;
+        height: 205px;
+        margin-bottom: 10px;
+      }
+      .para {
+        color: $color-secondary-darkgrey;
+      }
+    }
+    &.active {
+      display: block;
+    }
+  }
+
+  /*email inbox */
+  .email-inbox {
+    padding: 13px 0px 0 0;
+    display: none;
+    .email-inbox-head {
+      padding: 0px 0px 20px 40px;
+      border-bottom: 1px solid $borderbottom-color;
+      justify-content: space-between;
+      align-items: flex-end;
+      .upload-new {
+        text-transform: capitalize;
+        cursor: pointer;
+        color: $color-white;
+        background-color: $color-primary-orange;
+        width: 137px;
+        height: 38px;
+        padding: 10px 10px 10px 45px;
+        position: relative;
+        border-radius: 5px;
+        margin-right: 15px;
+        &:before {
+          content: "";
+          cursor: pointer;
+          position: absolute;
+          top: 10px;
+          left: 15px;
+          background: url(../../../assets/images/all-new-svg-icons/compose.svg);
+          width: 15px;
+          height: 15px;
+        }
+        &.upload-disable {
+          background-color: $compose-color;
+          pointer-events: none;
+        }
+      }
+      .inbox-wrapper {
+        text-transform: capitalize;
+        color: $color-secondary-darkgrey;
+        .inbox-receive {
+          padding-left: 26px;
+          position: relative;
+          margin-right: 30px;
+          cursor: pointer;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            background: url(../../../assets/images/all-new-svg-icons/inbox.svg);
+            width: 15px;
+            height: 15px;
+          }
+          &.active {
+            color: $color-primary-blue;
+            &:before {
+              background: url(../../../assets/images/all-new-svg-icons/inbox-active.svg);
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: auto;
+              bottom: -20px;
+              left: 4px;
+              width: 100%;
+              height: 3px;
+              background-color: $color-primary-blue;
+            }
+          }
+        }
+        .inbox-sent {
+          padding-left: 26px;
+          position: relative;
+          margin-right: 0px;
+          cursor: pointer;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            background: url(../../../assets/images/all-new-svg-icons/send.svg);
+            width: 15px;
+            height: 15px;
+          }
+          &.active {
+            color: $color-primary-blue;
+            &:before {
+              background: url(../../../assets/images/all-new-svg-icons/send-active.svg);
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: auto;
+              bottom: -20px;
+              left: 4px;
+              width: 100%;
+              height: 3px;
+              background-color: $color-primary-blue;
+            }
+          }
+        }
+      }
+    }
+    .email-inbox-empty {
+      height: calc(100vh - 240px);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: none;
+      img {
+        width: 226px;
+        height: 205px;
+        margin-bottom: 10px;
+      }
+      .para {
+        color: $color-secondary-darkgrey;
+      }
+      &.active {
+        display: flex;
+      }
+    }
+    .email-inbox-items {
+      display: none;
+      height: 100%;
+      overflow: auto;
+      .email-single-item {
+        padding: 20px 15px 20px 40px;
+        border-bottom: 1px solid $borderbottom-color;
+        justify-content: space-between;
+        cursor: pointer;
+        color: $color-secondary-darkgrey;
+        &:hover {
+          background-color: $emailhover-color;
+        }
+        &.new-email {
+          background-color: $emailnew-color;
+        }
+        .email-subject {
+          .attachements {
+            display: block;
+            margin-top: 10px;
+            span {
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 5px;
+              border: 1px solid $color-diff-grey;
+              padding: 2px 4px;
+              border-radius: 5px;
+              img {
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+
+        .from-name {
+          width: 30%;
+        }
+        .email-subject {
+          width: 50%;
+        }
+        .emailtime {
+          width: 20%;
+          text-align: end;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+    .open-email {
+      padding: 40px 15px 20px 40px;
+      display: none;
+      .email-heading-main {
+        display: flex;
+        align-items: center;
+      }
+      .email-heading {
+        color: $color-secondary-darkgrey;
+        position: relative;
+        padding-left: "15px";
+        // &:before {
+        //   content: "";
+        //   position: absolute;
+        //   top: 4px;
+        //   left: -26px;
+        //   background: url(../../../assets/images/all-new-svg-icons/backArrow.svg);
+        //   width: 20px;
+        //   height: 20px;
+        // }
+      }
+      .from-email {
+        padding: 20px 0px 20px 0px;
+        border-bottom: 1px solid $borderbottom-color;
+        color: $color-secondary-darkgrey;
+        justify-content: space-between;
+      }
+      .email-content {
+        border-bottom: 1px solid $borderbottom-color;
+        padding: 40px 0 20px 0;
+        .para {
+          color: $color-secondary-darkgrey;
+          padding-bottom: 20px;
+        }
+        .attachements {
+          display: block;
+          margin-top: 10px;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            border: 1px solid $color-diff-grey;
+            padding: 2px 4px;
+            border-radius: 5px;
+            img {
+              width: 15px;
+              height: 15px;
+              margin-right: 5px;
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+    &.active {
+      display: block;
+    }
+
+    /* email compose */
+    .email-compose {
+      display: none;
+
+      .emailinboxhead {
+        .upload-new {
+          background-color: $color-primary-orange;
+          background-color: $compose-color;
+        }
+      }
+      .email-compose-body {
+        padding: 0px 0px 0 40px;
+        .compose-to {
+          padding: 10px 10px;
+          border-bottom: 1px solid $borderbottom-color;
+        }
+        input {
+          height: 29px;
+          border: 0px;
+        }
+      }
+      .email-content {
+        background-color: $input-bg-color;
+        margin: 10px 0px 20px 40px;
+        padding: 20px 20px 10px 20px;
+        .para {
+          color: $color-secondary-darkgrey;
+          padding-bottom: 20px;
+        }
+        .send-wrap {
+          margin-top: 20px;
+          padding: 10px;
+          text-transform: capitalize;
+          border-top: 1px solid $borderbottom-color;
+          align-items: center;
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+          }
+          .send-btn {
+            width: 107px;
+            height: 38px;
+            color: $color-white;
+            background-color: $color-primary-orange;
+            margin-right: 15px;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .send-btn-disabled {
+            width: 107px;
+            height: 38px;
+            color: $color-white;
+            background-color: #a6a6a6;
+            margin-right: 15px;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .cancel-btn {
+            width: 107px;
+            height: 38px;
+            color: $color-primary-orange;
+            background-color: $color-white;
+            margin-right: 15px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid $color-primary-orange;
+          }
+        }
+        .attachements {
+          display: block;
+          margin-top: 10px;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            border: 1px solid $color-diff-grey;
+            padding: 2px 4px;
+            border-radius: 5px;
+            img {
+              width: 15px;
+              height: 15px;
+              margin-right: 5px;
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+        }
+        // #changes add App classs for ckeditor maxWidth
+        .App {
+          max-width: 790px;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  /* chat */
+  .chat-wrapper {
+    height: calc(100vh - 174px);
+    display: none;
+    .chat-wrapper-left {
+      width: 30%;
+      padding: 0px 0 0 0;
+      border-right: 1px solid #d0d0d0;
+      height: 100%;
+      .chat-wrapper-tab {
+        justify-content: space-around;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $borderbottom-color;
+        .chat-tab-single {
+          flex-wrap: wrap;
+          flex-direction: column;
+          text-align: center;
+          color: $tab-color;
+          position: relative;
+          cursor: pointer;
+          img {
+            width: 20px;
+            height: 20px;
+            margin: 0px auto 5px auto;
+            display: block;
+            &.active-icon {
+              display: none;
+            }
+            &.default-icon {
+              display: block;
+            }
+          }
+          &.active {
+            color: $color-primary-blue;
+            .active-icon {
+              display: block;
+            }
+            .default-icon {
+              display: none;
+            }
+            &:before {
+              content: "";
+              position: absolute;
+              top: auto;
+              bottom: -10px;
+              left: 4px;
+              width: 100%;
+              height: 3px;
+              background-color: $color-primary-blue;
+            }
+          }
+        }
+      }
+      .chat-multiple-sec {
+        height: calc(100% - 100px);
+        overflow: auto;
+        .chat-multiple-signle-sec {
+          padding: 20px 20px;
+          align-items: center;
+          /* border-top: 1px solid $color-border-grey; */
+          cursor: pointer;
+          position: relative;
+          color: $color-dark-grey;
+          text-transform: capitalize;
+          align-items: flex-end;
+          justify-content: space-between;
+          .person-details {
+            img {
+              &.person-icon {
+                width: 53px;
+                height: 53px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: middle;
+              }
+            }
+            .personal-details {
+              display: inline-block;
+              vertical-align: middle;
+              width: 163px;
+              span {
+                display: block;
+              }
+            }
+          }
+          &.active {
+            background-color: $color-active-lightblue;
+            &:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: auto;
+              left: auto;
+              width: 3px;
+              height: 100%;
+              background-color: $color-primary-blue;
+              right: 0;
+            }
+          }
+          &:hover {
+            background-color: $color-active-lightblue;
+          }
+          .person-time {
+            span {
+              display: block;
+              color: $color-white;
+              background-color: $color-done-text;
+              border-radius: 50%;
+              width: 20px;
+              height: 20px;
+              text-align: center;
+              margin: 0px auto 5px auto;
+            }
+          }
+        }
+      }
+    }
+    .chat-wrapper-right {
+      // #changes for message box up
+      width: 70%;
+      .chat-right-top {
+        padding: 0px 30px 40px 20px;
+        height: 93%;
+        .person-details {
+          padding-bottom: 10px;
+          border-bottom: 1px solid $borderbottom-color;
+          margin-bottom: 0px;
+          img {
+            width: 53px;
+            height: 53px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .personal-details {
+            display: inline-block;
+            vertical-align: middle;
+            color: $persondetail-color;
+            width: 80%;
+            span {
+              display: block;
+            }
+          }
+        }
+        .text-qustion-wrap-content {
+          // #changes add transform && over flow xy changes && add hover for auto hidden overflow
+          height: calc(100% - 8%);
+          overflow-y: hidden;
+          overflow-x: hidden;
+          padding-top: 10px;
+          transform: scale(1, -1);
+          .text-qustion-wrap {
+            display: block;
+            width: 100%;
+            .text-qustion {
+              color: $color-secondary-darkgrey;
+
+              .text-qustion-box {
+                background-color: $chatboxcolor;
+                padding: 10px;
+                border-radius: 5px;
+                position: relative;
+                &:before {
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 10px 10px 0 10px;
+                  border-color: $chatboxcolor transparent transparent
+                    transparent;
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: -10px;
+                }
+              }
+
+              &.text-left {
+                display: inline-block;
+              }
+              span {
+                color: $persondetail-color;
+                padding-top: 3px;
+                display: inline-block;
+                float: right;
+              }
+              &.width-300 {
+                max-width: 300px;
+              }
+              &.width-100 {
+                max-width: 100px;
+              }
+              &.width-200 {
+                max-width: 200px;
+              }
+              &.width-370 {
+                max-width: 370px;
+              }
+              &.width-150 {
+                max-width: 150px;
+              }
+              &.width-500 {
+                max-width: 500px;
+              }
+              &.width-75 {
+                max-width: 75%;
+              }
+            }
+            .text-answer {
+              max-width: 300px;
+              color: $color-secondary-darkgrey;
+
+              .text-answer-box {
+                background-color: $chatboxanswercolor;
+                padding: 10px;
+                border-radius: 5px;
+                position: relative;
+                // transform: scale(1, -1);
+                &:before {
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 10px 10px 0 10px;
+                  border-color: $chatboxanswercolor transparent transparent
+                    transparent;
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  right: -10px;
+                }
+              }
+
+              &.text-left {
+                display: inline-block;
+                float: right;
+              }
+              span {
+                color: $persondetail-color;
+                padding-top: 3px;
+                display: inline-block;
+                float: right;
+              }
+              &.width-300 {
+                max-width: 300px;
+              }
+              &.width-200 {
+                max-width: 200px;
+              }
+
+              &.width-370 {
+                max-width: 370px;
+              }
+              &.width-100 {
+                max-width: 100px;
+              }
+              &.width-150 {
+                max-width: 150px;
+              }
+              &.width-500 {
+                max-width: 500px;
+              }
+              &.width-75 {
+                max-width: 75%;
+              }
+            }
+          }
+          &:hover {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-right: 1px;
+          }
+        }
+      }
+      .chat-btn-wrap {
+        height: 6%;
+        position: relative;
+        input {
+          width: 100%;
+          height: 100%;
+          background-color: $chatbtncolor;
+          border: 0;
+          padding: 5px 15px;
+          color: $color-secondary-darkgrey;
+        }
+        img {
+          cursor: pointer;
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 20px;
+        }
+      }
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+#style-3::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+#style-3::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+#style-3::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $scroll-thumb-color;
+}
+
+#style-4::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+#style-4::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $scroll-thumb-color;
+}

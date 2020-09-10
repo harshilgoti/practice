@@ -1,0 +1,53 @@
+// Colors
+$color-primary-blue: #008afc;
+$color-primary-orange: #ff6000;
+$color-primary-orange-light: #fff9f5;
+$color-secondary-green: #20cfe0;
+$color-secondary-darkgrey: #404040;
+$color-secondary-lightgrey: #d5d5d5;
+$color-albaster: #f9f9f9;
+$color-green-light: #a2e6ec;
+$color-border-grey: #d0d0d0;
+$color-active-lightblue: #ebf6ff;
+$color-white: #fff;
+$color-popup-overlay: rgba(0, 0, 0, 0.3);
+$color-dark-grey: #858585;
+$color-diff-grey: #adadad;
+$scroll-thumb-color: rgba(0, 0, 0, 0.2);
+$input-bg-color: #fafafa;
+$borderbottom-color: #eaecef;
+$emailhover-color: #f5fafd;
+$emailnew-color: #f6f6f6;
+$compose-color: #a6a6a6;
+$tab-color: #707070;
+$persondetail-color: #848484;
+$chatboxcolor: #f2f5f8;
+$chatboxanswercolor: #e1f9fc;
+$chatbtncolor: #fbfbfb;
+$developcolor: #e3f5f6;
+
+$color-ticket-backlog: #ffc366;
+$color-ticket-in-progress: $color-primary-blue;
+$color-ticket-done: #5fc174;
+
+$color-backlog-text: #195790;
+$color-in-progress-text: #0a70c4;
+$color-testing-text: #00acb1;
+$color-done-text: #55c595;
+
+$color-status-backend: #20cfe0;
+$color-status-communication: #c476ec;
+$color-status-frontend: #ecbe76;
+$color-status-development: #ec8d76;
+
+$color-test-success: $color-ticket-done;
+$color-test-failed: #f44336;
+
+// Font Families
+$font-assistant: "Assistant", sans-serif;
+$font-saira-condensed: "Saira Condensed", sans-serif;
+
+// Need to remove these
+$font-assistant-light: "Assistant", sans-serif;
+$font-assistant-regular: "Assistant", sans-serif;
+$font-assistant-semibold: "Assistant", sans-serif;

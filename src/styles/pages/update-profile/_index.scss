@@ -1,0 +1,236 @@
+.profileMain {
+  padding: 100px 0 !important;
+  .profileMain-title-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profile-picture-box-main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    .avatar-box {
+      // margin-top: 50px;
+      width: fit-content;
+      position: relative;
+      .upload-image-icon {
+        cursor: pointer;
+        width: auto;
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid #d5d5d5;
+        display: flex;
+        img {
+          width: 32px;
+          height: 32px;
+          background-color: white;
+          padding: 4px;
+        }
+      }
+      .disable {
+        pointer-events: none;
+        cursor: none;
+        opacity: 0.6;
+      }
+      .spinning-loader {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid rgba(29, 161, 242, 0.2);
+        border-left-color: rgb(29, 161, 242);
+        background: transparent;
+        animation: rotate-s-loader 1s linear infinite;
+        margin: 6rem auto;
+        position: absolute;
+        top: -40px;
+      }
+
+      @keyframes rotate-s-loader {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .avatar-div {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #d5d5d5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        .avatar {
+          max-width: 150px;
+          max-height: 150px;
+        }
+      }
+    }
+    .avatar-tips {
+      margin-left: 15%;
+
+      .tips-heading {
+        padding: 16px 0px;
+      }
+      ul {
+        padding-left: 16px;
+        li {
+          padding-bottom: 8px;
+          list-style: disc;
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  h5 {
+    font-family: $font-assistant-light;
+  }
+  .form-row {
+    width: 100%;
+    // display: flex;
+    // justify-content: space-between;
+
+    .first-thing-heading {
+      margin: 70px 0px 35px;
+    }
+    .second-heading {
+      margin: 20px 0px 20px;
+    }
+    .contact-heading {
+      margin: 35px 0px 35px;
+    }
+    @media only screen and (max-width: 660px) {
+      display: block;
+    }
+    > div {
+      width: 100%;
+      @media only screen and (max-width: 1025px) {
+        width: 100%;
+      }
+      @media only screen and (max-width: 660px) {
+        width: 100%;
+      }
+    }
+
+    ul {
+      width: 100%;
+      .first-thing-main-flex {
+        display: flex;
+        justify-content: space-between;
+        .hover-text {
+          top: 21px;
+        }
+        > li {
+          width: 47%;
+        }
+      }
+      .nutshell-main-flex {
+        width: 100%;
+      }
+      li {
+        margin-bottom: 25px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+        textarea {
+          height: 119px;
+        }
+      }
+    }
+  }
+}
+
+.add-section {
+  position: relative;
+  padding-left: 35px;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: $font-assistant-light;
+  color: $color-secondary-darkgrey;
+  text-decoration: none;
+  cursor: pointer;
+  &:after {
+    width: 25px;
+    height: 25px;
+    border: 2px solid $color-primary-orange;
+    content: "+";
+    position: absolute;
+    color: $color-primary-orange;
+    font-size: 28px;
+    line-height: 22px;
+    font-family: $font-assistant-regular;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+.account-main {
+  padding: 100px 0 !important;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  h5 {
+    font-family: $font-assistant-light;
+  }
+  .form-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-width: 660px) {
+      display: block;
+    }
+    > div {
+      width: 100%;
+      @media only screen and (max-width: 1025px) {
+        width: 100%;
+      }
+      @media only screen and (max-width: 660px) {
+        width: 100%;
+      }
+    }
+    ul {
+      width: 100%;
+      margin-top: 70px;
+      .name-main-flex {
+        display: flex;
+        justify-content: space-between;
+
+        > li {
+          width: 47%;
+        }
+      }
+      .password-main-flex {
+        display: flex;
+        justify-content: space-between;
+        .hover-text {
+          top: 21px;
+        }
+        > li {
+          width: 47%;
+        }
+      }
+      li {
+        margin-bottom: 25px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+        textarea {
+          height: 119px;
+        }
+      }
+    }
+  }
+}

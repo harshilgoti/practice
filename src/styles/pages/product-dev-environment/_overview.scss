@@ -1,0 +1,370 @@
+.overview {
+  // overview scss
+  // padding-left: 15px;
+  // padding-right: 15px;
+  display: flex;
+  justify-content: space-;
+  .overview-left {
+    background-color: $color-albaster;
+    min-width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    height: calc(100% - 16px);
+    .product-head {
+      font-family: $font-saira-condensed;
+      color: $color-secondary-darkgrey;
+      margin: 0px 0 20px 0;
+    }
+    .product-main-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .overview-right {
+    margin-left: 60px;
+    height: calc(100% - 16px);
+    justify-content: space-around;
+    .product-backlog {
+      min-width: 300px;
+      margin-left: 60px;
+      background-color: $color-albaster;
+      padding: 15px 0px;
+      border-radius: 5px;
+      height: 100%;
+      display: none;
+      position: relative;
+      max-width: 290px;
+      &:first-child {
+        margin-left: 0px;
+      }
+      .product-backlog-box-wrapper {
+        // #changes remove overflow for custom scroll
+        max-height: calc(100% - 60px);
+        border-radius: 6px;
+        // padding: 10px 30px;
+        // overflow: auto;
+        position: relative;
+        .product-backlog-box {
+          cursor: pointer;
+          padding: 10px 10px;
+          background-color: $color-white;
+          border-radius: 5px;
+          position: relative;
+          .para {
+            color: $color-secondary-darkgrey;
+            padding-right: 10px;
+          }
+          .backlogicon {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+          }
+        }
+      }
+      .drag-and-drop-area {
+        justify-content: center;
+        align-items: center;
+
+        min-height: calc(100vh - 345px);
+
+        .para {
+          color: $color-secondary-darkgrey;
+          padding: 0 30px;
+        }
+      }
+      .create-sprint-head {
+        display: flex;
+        align-items: center;
+        span {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+        }
+        .title-with-icon {
+          margin-left: 10px;
+        }
+      }
+      .create-sprint-head-plus {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .create-sprint-head-plus-icon {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 40px;
+        .left-arrow {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+        }
+        .plus-icon {
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+        }
+      }
+      .create-button {
+        cursor: pointer;
+        width: calc(100% - 40px);
+        height: 50px;
+        background-color: $color-primary-orange;
+        color: $color-white;
+        display: inline-block;
+        border-radius: 5px;
+        vertical-align: middle;
+        padding: 14px 0 0 0;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+      &.active {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+      }
+
+      .backlog-sprint {
+        .product-backlog-box {
+          align-items: center;
+
+          .sprint-text {
+            width: 150px;
+          }
+          .progress-limit {
+            width: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0px 0 0;
+            .progress-show {
+              width: 100%;
+              max-width: 97px;
+              .inner-wrap {
+                width: 100%;
+                height: 5px;
+                display: inline-block;
+                overflow: hidden;
+                border-radius: 10px;
+                position: relative;
+                background-color: #d5d5d5;
+                .progress-rate {
+                  width: auto;
+                  height: 100%;
+                  background-color: #d5d5d5;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+                &.green-color {
+                  .progress-rate {
+                    background-color: #5fc174;
+                  }
+                }
+                &.orange-color {
+                  .progress-rate {
+                    background-color: #ffc366;
+                  }
+                }
+                &.red-color {
+                  .progress-rate {
+                    background-color: #cc3a33;
+                  }
+                }
+              }
+            }
+            .progress-percent {
+              .text-body {
+                width: 100%;
+                float: left;
+              }
+              img {
+                width: 20px;
+              }
+            }
+          }
+          .progress-limit-end {
+            width: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 0px 0 0;
+
+            .progress-percent {
+              .text-body {
+                width: 100%;
+                float: left;
+              }
+              img {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+      &.sprint-details {
+        .create-sprint-head-plus {
+          display: flex;
+          justify-content: space-between;
+        }
+        .create-sprint-head-plus-icon {
+          // #changes align-items added for center position:
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 30px 10px;
+          .plus-icon {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+          }
+          .left-arrow {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+          }
+          .title-with-icon {
+            display: flex;
+            align-items: center;
+          }
+          .title {
+            margin-left: 10px;
+          }
+        }
+        .progress-limit {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 0px 0 5px 0;
+          padding: 0px 30px;
+          .progress-show {
+            width: 100%;
+            max-width: 150px;
+            margin-right: 10px;
+            .inner-wrap {
+              width: 100%;
+              height: 5px;
+              display: inline-block;
+              overflow: hidden;
+              border-radius: 10px;
+              position: relative;
+              background-color: #d5d5d5;
+              .progress-rate {
+                width: auto;
+                height: 100%;
+                background-color: #d5d5d5;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              &.green-color {
+                .progress-rate {
+                  background-color: #5fc174;
+                }
+              }
+              &.orange-color {
+                .progress-rate {
+                  background-color: #ffc366;
+                }
+              }
+              &.red-color {
+                .progress-rate {
+                  background-color: #cc3a33;
+                }
+              }
+            }
+          }
+          .progress-percent {
+            .text-body {
+              width: 100%;
+              float: left;
+            }
+            img {
+              width: 20px;
+            }
+          }
+        }
+
+        .product-backlog-box-wrapper {
+          .progress-limit {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0px 0 15px 0;
+            padding: 0px;
+            .progress-show {
+              width: 100%;
+              max-width: 150px;
+              margin-right: 20px;
+              .inner-wrap {
+                width: 100%;
+                height: 5px;
+                display: inline-block;
+                overflow: hidden;
+                border-radius: 10px;
+                position: relative;
+                background-color: #d5d5d5;
+                .progress-rate {
+                  width: auto;
+                  height: 100%;
+                  background-color: #d5d5d5;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+                &.green-color {
+                  .progress-rate {
+                    background-color: #5fc174;
+                  }
+                }
+                &.orange-color {
+                  .progress-rate {
+                    background-color: #ffc366;
+                  }
+                }
+                &.red-color {
+                  .progress-rate {
+                    background-color: #cc3a33;
+                  }
+                }
+              }
+            }
+            .progress-percent {
+              .text-body {
+                width: 100%;
+                float: left;
+              }
+              img {
+                width: 20px;
+              }
+            }
+          }
+          .product-backlog-box {
+            padding: 20px 10px;
+            margin-bottom: 10px;
+
+            .progress-limit {
+              margin: 10px 0 0px 0;
+            }
+          }
+        }
+      }
+      &.product-backlog-with-btn {
+        .product-backlog-box-wrapper {
+          height: calc(100% - 115px);
+        }
+      }
+    }
+  }
+  .product-backlog-head {
+    font-family: $font-saira-condensed;
+    color: $color-secondary-darkgrey;
+    padding-bottom: 15px;
+    padding-left: 30px;
+  }
+}
